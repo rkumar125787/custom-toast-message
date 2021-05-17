@@ -6,8 +6,10 @@ export default class NotificationMessage extends LightningElement {
     @api mode = 'dismiss';
     @api type = 'info';
     @api message = 'Sample Information Message';
-    @api messageHeader = 'Information'
-    messageLink;
+    @api messageHeader = 'Information';
+    @api linkTarget;
+    @api navigatorLinkText;
+    @api navigatorLinkTextTarget;
     get isSuccess() {
         return this.type == 'success' ? true : false;
     }
@@ -54,14 +56,15 @@ export default class NotificationMessage extends LightningElement {
                 }, this.timeDelay);
         }
     }
-    @api showToast(mode, type, header, message, timedelay) {
+    @api showToast(mode, type, header, message, timedelay, navigatorLinkText, navigatorLinkTexttarget) {
         this.disabled = false;
         this.mode = mode || this.mode;
         this.messageHeader = header || this.messageHeader;
         this.message = message || this.message;
         this.timeDelay = timedelay || this.timeDelay;
         this.type = type || this.type;
-        console.log('mode:::' + this.mode);
+        this.navigatorLinkText = navigatorLinkText || this.navigatorLinkText;
+        this.navigatorLinkTextTarget = navigatorLinkTexttarget || this.navigatorLinkTextTarget;
         this.clearTostMessage();
     }
 }

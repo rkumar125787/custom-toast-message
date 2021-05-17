@@ -36,9 +36,9 @@
                     <h5 class="adc-h5">{messageHeader}</h5>
                     <p class="adc-p">{message}
                     </p>
-                    <div if:true={messageLink} class="adc-notifications-link">
-                        <a class="adc-notifications-clickable-link" href="">Interact
-                            with your model using Utterance Profiler</a>
+                    <div if:true={navigatorLinkText} class="adc-notifications-link">
+                        <a class="adc-notifications-clickable-link" href={navigatorLinkTextTarget}
+                            target="_blank">{navigatorLinkText}</a>
                     </div>
                 </div>
             </div>
