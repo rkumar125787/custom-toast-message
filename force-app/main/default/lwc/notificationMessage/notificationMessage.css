@@ -1,0 +1,112 @@
+.adc-notifications-toaster-container {
+    position: fixed;
+    bottom: 20px;
+    right: 5px;
+    z-index: 9999999;
+    line-height: 30px;
+}
+
+.adc-notifications-toast {
+    transition: all 2s ease-in;
+    width: 480px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+.adc-notifications-toast--info {
+    background-color: #f2fcff;
+}
+
+.adc-notifications-toast--warn {
+    background-color: #fff5e7;
+}
+
+.adc-notifications-toast--success {
+    background-color: #ecf9f0;
+}
+
+.adc-notifications-toast--error {
+    background-color: #fcf8f7;
+}
+
+.adc-notifications-toast-icon-container {
+    margin: 1.5rem;
+}
+
+.adc-notifications-toast-dismiss-container {
+    margin: 1.5rem 1.5rem 0 0;
+    float: right;
+}
+
+.adc-notifications-toast-icon {
+    display: inline-flex;
+    flex: 0 0 3rem;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    svg {
+        fill: white;
+        vertical-align: middle;
+    }
+}
+
+.adc-notifications-toast-icon--info {
+    background-color: #00B0E6;
+}
+
+.adc-notifications-toast-icon--success {
+    background-color: #008577;
+}
+
+.adc-notifications-toast-icon--error {
+    background-color: #cc1a3d;
+}
+
+.adc-notifications-link {
+    display: inline;
+}
+
+.adc-notifications-clickable-link {
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.adc-notifications-toast-text-container {
+    width: 35rem;
+}
+
+.adc-notifications-toast-text {
+    padding: 1rem;
+    font-size: 15px;
+    font-family: 'Amazon Ember Regular', 'Helvetica Neue', Arial, Helvetica, Roboto, sans-serif;
+    text-decoration: none;
+    justify-content: center;
+    vertical-align: middle;
+    color: #373e3e;
+}
+
+p.adc-p {
+    margin-bottom: 0.5rem;
+    margin-top: 0.25rem;
+    overflow: hidden;
+    position: relative;
+    line-height: 1.4em;
+    max-height: 160px;
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em;
+    text-align: left;
+}
+
+h5.adc-h5 {
+    margin-bottom: 0.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 500;
+}
