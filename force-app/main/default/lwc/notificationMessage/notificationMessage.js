@@ -8,11 +8,41 @@ export default class NotificationMessage extends LightningElement {
     @api message = 'Sample Information Message';
     @api messageHeader = 'Information'
     messageLink;
+    get isSuccess() {
+        return this.type == 'success' ? true : false;
+    }
+    get isInfo() {
+        return this.type != 'error' && this.type != 'success' ? true : false;
+    }
+    get isError() {
+        return this.type == 'error' ? true : false;
+    }
     closeToast() {
         this.disabled = true;
     }
+    removeClass() {
+        this.template.querySelector('.adc-notifications-toast').classList.remove('adc-notifications-toast--success');
+        this.template.querySelector('.adc-notifications-toast-icon').classList.remove('adc-notifications-toast-icon--success');
+        this.template.querySelector('.adc-notifications-toast').classList.remove('adc-notifications-toast--error');
+        this.template.querySelector('.adc-notifications-toast-icon').classList.remove('adc-notifications-toast-icon--error');
+        this.template.querySelector('.adc-notifications-toast').classList.remove('adc-notifications-toast--info');
+        this.template.querySelector('.adc-notifications-toast-icon').classList.remove('adc-notifications-toast-icon--info');
+    }
     renderedCallback() {
+        this.removeClass();
+        if (this.type == 'success') {
+            this.template.querySelector('.adc-notifications-toast').classList.add('adc-notifications-toast--success');
+            this.template.querySelector('.adc-notifications-toast-icon').classList.add('adc-notifications-toast-icon--success');
 
+        }
+        else if (this.type == 'error') {
+            this.template.querySelector('.adc-notifications-toast').classList.add('adc-notifications-toast--error');
+            this.template.querySelector('.adc-notifications-toast-icon').classList.add('adc-notifications-toast-icon--error');
+        }
+        else {
+            this.template.querySelector('.adc-notifications-toast').classList.add('adc-notifications-toast--info');
+            this.template.querySelector('.adc-notifications-toast-icon').classList.add('adc-notifications-toast-icon--info');
+        }
     }
     clearTostMessage() {
         this.timeDelay = isNaN(parseInt(this.timeDelay)) ? 5000 : this.timeDelay;
