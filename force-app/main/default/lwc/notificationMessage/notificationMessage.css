@@ -8,7 +8,7 @@
 
 .adc-notifications-toast {
     transition: all 2s ease-in;
-    width: 480px;
+    width: 450px;
     display: flex;
     flex-direction: row;
     margin-top: 1rem;
